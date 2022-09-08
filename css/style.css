@@ -1,0 +1,172 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+
+/*General ruleset*/
+body{
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F7E9DC;
+    color:#361F0F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header,main{
+    max-width: 500px;
+}
+
+
+header{
+    padding: 1.5em;
+    margin: 0;
+    background-color:#EC755D;
+    border-radius: 10px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-title,
+.header-balance{
+    color: #fff;
+    margin: 0;
+}
+
+.header-balance{
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: .2em;
+}
+
+.header-logo{
+    width: 70px;
+}
+
+main{
+    background-color: #fff;
+    margin-top: 1.5em;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.chart-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.chart,
+.statement{
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom:1.5em;
+}
+
+.chart{
+    display: grid;
+    grid-template-rows:min-content 200px min-content;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-areas: 
+    "title title title title title title title "
+    "uno due tre quattro cinque sei sette"
+    "lune marte merco giove vener saba dome";
+    border-bottom: 2px solid #F7E9DC;
+}
+
+.chart-title{
+    grid-area: title;
+    padding-bottom: 2em;
+}
+.lunedi-value{grid-area: uno;}
+.martedi-value{grid-area: due;}
+.mercoledi-value{grid-area:tre;}
+.giovedi-value{grid-area:quattro ;}
+.venerdi-value{grid-area:cinque;}
+.sabato-value{grid-area:sei;}
+.domenica-value{grid-area:sette;}
+
+.lunedi{grid-area:lune;}
+.martedi{grid-area:marte;}
+.mercoledi{grid-area:merco;}
+.giovedi{grid-area:giove;}
+.venerdi{grid-area:vener;}
+.sabato{grid-area:saba;}
+.domenica{grid-area:dome;}
+
+
+.day{
+    justify-self: center;
+    margin: 0;
+    opacity: 50%;
+    font-size: .875rem
+}
+
+.column{
+    justify-self: center;
+    width: 80%;
+    background-color: #EC755D;
+    border-radius: 5px;
+    align-self: flex-end;
+    height: 20%;
+    position: relative;
+}
+
+.column:hover,
+.column:focus{
+    background-color: #76B5BC;
+    
+    
+}
+
+.column::before{
+    content:"$140";
+    width: 100%;
+    position: absolute;
+    bottom: 110%;
+    text-align: center;
+    background-color: #361F0F;
+    color: #fff;
+    font-size: .875rem;
+    border-radius: 5px;
+}
+
+.statement{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+    "title ..."
+    "expenses performance";
+}
+
+.statement-title{grid-area:title;}
+.statement-expenses{
+    grid-area: expenses;
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0;
+}
+.statement-performance{
+    grid-area: performance;
+    margin: 0;
+    font-weight: 700;
+    text-align: right;
+
+}
+.statement-period{
+    grid-row: 2;
+    grid-column: 2;
+    margin-bottom: 0;
+    text-align: right;
+}
+
+
+
